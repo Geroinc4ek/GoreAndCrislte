@@ -15,10 +15,59 @@
             overflow-x: hidden;
             position: relative;
         }
+        /* Навигационная панель */
+        .navbar {
+            background-color: #000;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: center; /* Центрирование всех элементов */
+            align-items: center;
+            border-bottom: 2px solid #ff1a1a;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+        .navbar .logo {
+            color: #9b59b6; /* Фиолетовый цвет логотипа */
+            font-size: 24px;
+            font-family: 'Creepster', cursive;
+            margin-right: 20px; /* Отступ справа от логотипа */
+        }
+        .navbar nav {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+        .navbar a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 16px;
+            transition: color 0.3s;
+        }
+        .navbar a:hover {
+            color: #ff4d4d;
+        }
+        .navbar .services-btn {
+            background-color: #fff;
+            color: #000;
+            padding: 8px 16px;
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.3s;
+            margin-left: 10px; /* Лёгкий отступ для интеграции в меню */
+            text-decoration: none; /* Убираем подчёркивание у ссылки */
+            display: inline-block; /* Для стилизации как кнопки */
+        }
+        .navbar .services-btn:hover {
+            background-color: #e6e6e6;
+        }
         .container {
             max-width: 1000px;
-            margin: 0 auto;
-            padding: 40px 20px;
+            margin: 80px auto 0; /* Отступ сверху для навигации */
+            padding: 20px;
         }
         h1 {
             font-family: 'Creepster', cursive;
@@ -31,11 +80,11 @@
         h2 {
             font-family: 'Creepster', cursive;
             color: #cc0000;
-            font-size: 34px;
+            font-size: 30px;
             text-shadow: 0 0 5px #ff3333;
         }
         p {
-            font-size: 18px;
+            font-size: 16px;
             line-height: 1.6;
             color: #d9d9d9;
         }
@@ -49,8 +98,8 @@
             color: #ff9999;
         }
         .section {
-            margin: 60px 0;
-            padding: 25px;
+            margin: 40px 0;
+            padding: 20px;
             background: rgba(20, 20, 20, 0.85);
             border: 1px solid #ff1a1a;
             border-radius: 5px;
@@ -58,14 +107,14 @@
         }
         .price {
             color: #ff1a1a;
-            font-size: 28px;
+            font-size: 24px;
             font-weight: bold;
         }
         .intro {
             position: relative;
-            padding: 30px;
+            padding: 20px;
             background: url('https://img.goodfon.ru/original/1920x1080/e/36/cherep-krasnyi-krasnoe-red-blood-blood-blood-and-fire-krov-p.jpg') center/cover no-repeat;
-            height: 250px;
+            min-height: 150px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -74,19 +123,19 @@
             animation: bloodDrip 5s infinite;
         }
         .intro p {
-            font-size: 22px;
+            font-size: 18px;
             color: #fff;
             text-shadow: 0 0 10px #000;
             background: rgba(0, 0, 0, 0.8);
-            padding: 15px;
+            padding: 10px;
             border-radius: 5px;
-            max-width: 600px;
+            max-width: 80%;
         }
-        /* Анимация капель крови */
+        /* Капли крови */
         .blood-drop {
             position: absolute;
-            width: 10px;
-            height: 20px;
+            width: 8px;
+            height: 15px;
             background: #ff0000;
             border-radius: 50% 50% 0 0;
             opacity: 0.8;
@@ -97,6 +146,62 @@
         .drop3 { left: 50%; animation-delay: 2s; }
         .drop4 { left: 70%; animation-delay: 3s; }
         .drop5 { left: 90%; animation-delay: 1.5s; }
+        /* Модальное окно */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 1001;
+            justify-content: center;
+            align-items: center;
+        }
+        .modal-content {
+            background: #1a1a1a;
+            padding: 20px;
+            border: 2px solid #ff1a1a;
+            border-radius: 5px;
+            box-shadow: 0 0 20px rgba(255, 0, 0, 0.5);
+            text-align: center;
+            max-width: 400px;
+            width: 90%;
+        }
+        .modal-content h3 {
+            font-family: 'Creepster', cursive;
+            color: #ff1a1a;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        .modal-content a {
+            background-color: #ff4d4d;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 10px;
+            font-size: 16px;
+            text-decoration: none;
+            display: inline-block;
+            transition: background-color 0.3s;
+        }
+        .modal-content a:hover {
+            background-color: #ff3333;
+        }
+        .close-modal {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 20px;
+            color: #fff;
+            cursor: pointer;
+            background: none;
+            border: none;
+        }
+        /* Анимации */
         @keyframes drip {
             0% { top: -20px; opacity: 0.8; }
             50% { opacity: 1; }
@@ -111,6 +216,106 @@
             50% { border-bottom-color: #800000; }
             100% { border-bottom-color: #ff0000; }
         }
+        /* Адаптивность */
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+            h1 {
+                font-size: 36px;
+            }
+            h2 {
+                font-size: 24px;
+            }
+            p {
+                font-size: 14px;
+            }
+            .intro {
+                min-height: 120px;
+            }
+            .intro p {
+                font-size: 16px;
+                max-width: 90%;
+            }
+            .section {
+                margin: 20px 0;
+                padding: 15px;
+            }
+            .price {
+                font-size: 20px;
+            }
+            .blood-drop {
+                width: 6px;
+                height: 12px;
+            }
+            .navbar {
+                padding: 5px 10px;
+            }
+            .navbar nav {
+                gap: 10px;
+            }
+            .navbar a {
+                font-size: 14px;
+            }
+            .navbar .services-btn {
+                padding: 6px 12px;
+                font-size: 14px;
+                margin-left: 5px;
+            }
+            .modal-content {
+                padding: 15px;
+            }
+            .modal-content h3 {
+                font-size: 20px;
+            }
+            .modal-content a {
+                padding: 8px 16px;
+                font-size: 14px;
+                margin: 5px;
+            }
+        }
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 28px;
+            }
+            h2 {
+                font-size: 20px;
+            }
+            p {
+                font-size: 12px;
+            }
+            .intro p {
+                font-size: 14px;
+            }
+            .section {
+                padding: 10px;
+            }
+            .navbar {
+                padding: 5px 5px;
+            }
+            .navbar nav {
+                gap: 5px;
+            }
+            .navbar a {
+                font-size: 12px;
+            }
+            .navbar .services-btn {
+                padding: 4px 8px;
+                font-size: 12px;
+                margin-left: 3px;
+            }
+            .modal-content {
+                padding: 10px;
+            }
+            .modal-content h3 {
+                font-size: 18px;
+            }
+            .modal-content a {
+                padding: 6px 12px;
+                font-size: 12px;
+                margin: 3px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -121,11 +326,21 @@
     <div class="blood-drop drop4"></div>
     <div class="blood-drop drop5"></div>
 
+    <div class="navbar">
+        <div class="logo">🔪</div>
+        <nav>
+            <a href="#main">Главная</a>
+            <a href="https://t.me/GoreAndCristle" target="_blank">Telegram-канал</a>
+            <a href="#articles">Статьи</a>
+            <a href="javascript:void(0)" class="services-btn" onclick="openModal()">Услуги</a>
+        </nav>
+    </div>
+
     <div class="intro">
         <p>⚠️ Осторожно: Этот сайт — врата в мир жестокости и мрака. Только для тех, кто не боится заглянуть в бездну.</p>
     </div>
     <div class="container">
-        <h1>🔪 Gore & Cristle 🔪</h1>
+        <h1 id="main">🔪 Gore & Cristle 🔪</h1>
         <div class="section">
             <p>Добро пожаловать в обитель ужаса и расчленёнки. Здесь ты найдёшь то, что скрыто от глаз обычных смертных:<br>
             🔥 Реальные истории, от которых кровь стынет в жилах.<br>
@@ -134,26 +349,50 @@
             <p>Вступай в наш Telegram-канал и стань частью кошмара: <a href="https://t.me/GoreAndCristle" target="_blank">t.me/GoreAndCristle</a></p>
         </div>
 
-        <div class="section">
+        <div class="section" id="private">
             <h2>🔒 Приватный доступ</h2>
             <p>Для самых отчаянных мы открываем двери в секретные архивы:<br>
-            - <b>War</b>: Кадры прямиком из горячих точек.<br>
             - <b>Детское Питание</b>: То, о чём не говорят вслух.<br>
             - <b>MixTape</b>: Сборники, собранные в глубинах даркнета.<br>
             - <b>SelfHarm</b>: Боль, запечатлённая на плёнке.<br>
-            - <b>Recipe</b>: Туториалы по взлому и крафт, рецепты всяких интересных веществ.<br>
             И это лишь часть. Тысячи часов видео, сотни уникальных файлов — всё, что ты не найдёшь в открытом доступе.</p>
             <p class="price">Цена входа: 200₽ или 100 звёзд</p>
             <p>Оплати и получи доступ к бездне:<br>
             <a href="https://t.me/MOHCTP_MEPTB0" target="_blank">@MOHCTP_MEPTB0</a> | <a href="https://t.me/geroinamnogo" target="_blank">@geroinamnogo</a></p>
         </div>
 
-        <div class="section">
-            <h2>📥 Предложи свой кошмар</h2>
-            <p>У тебя есть что-то, что достойно нашей коллекции? Кровавые фото, видео или истории, которые заставят нас вздрогнуть? Отправляй через нашего бота!<br>
-            <a href="https://t.me/GoreAndCristleBot" target="_blank">t.me/GoreAndCristleBot</a></p>
-            <p>Лучшие материалы попадут в приватный раздел — стань частью нашего мира!</p>
+        <div class="section" id="articles">
+            <h2>📝 Статьи</h2>
+            <p>Здесь собраны мрачные размышления о мире gore. Представьте заброшенный особняк, где стены пропитаны кровью, или тайные эксперименты, оставляющие за собой лишь эхо криков. Эти тексты погружают в глубины ужаса, раскрывая тайны, которые лучше бы остались похороненными. Изучай архив и делись своими находками в нашем сообществе!</p>
+        </div>
+
+    <!-- Модальное окно -->
+    <div id="servicesModal" class="modal">
+        <div class="modal-content">
+            <button class="close-modal" onclick="closeModal()">×</button>
+            <h3>Выберите специалиста</h3>
+            <a href="https://t.me/MOHCTP_MEPTB0" target="_blank">Связаться с @MOHCTP_MEPTB0</a>
+            <a href="https://t.me/geroinamnogo" target="_blank">Связаться с @geroinamnogo</a>
         </div>
     </div>
+    </div>
+
+    <script>
+        function openModal() {
+            document.getElementById('servicesModal').style.display = 'flex';
+        }
+
+        function closeModal() {
+            document.getElementById('servicesModal').style.display = 'none';
+        }
+
+        // Закрытие модального окна при клике вне его
+        window.onclick = function(event) {
+            const modal = document.getElementById('servicesModal');
+            if (event.target === modal) {
+                modal.style.display = 'none';
+            }
+        }
+    </script>
 </body>
 </html>
