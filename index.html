@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gore & Cristle</title>
+    <link href="https://fonts.googleapis.com/css2?family=Creepster&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #0d0d0d;
+            color: #fff;
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+            position: relative;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        h1 {
+            font-family: 'Creepster', cursive;
+            color: #ff1a1a;
+            font-size: 50px;
+            text-shadow: 0 0 10px #ff0000, 0 0 20px #ff0000;
+            animation: flicker 1.5s infinite alternate;
+            margin-bottom: 20px;
+        }
+        h2 {
+            font-family: 'Creepster', cursive;
+            color: #cc0000;
+            font-size: 34px;
+            text-shadow: 0 0 5px #ff3333;
+        }
+        p {
+            font-size: 18px;
+            line-height: 1.6;
+            color: #d9d9d9;
+        }
+        a {
+            color: #ff4d4d;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+        a:hover {
+            color: #ff9999;
+        }
+        .section {
+            margin: 60px 0;
+            padding: 25px;
+            background: rgba(20, 20, 20, 0.85);
+            border: 1px solid #ff1a1a;
+            border-radius: 5px;
+            box-shadow: 0 0 15px rgba(255, 0, 0, 0.4);
+        }
+        .price {
+            color: #ff1a1a;
+            font-size: 28px;
+            font-weight: bold;
+        }
+        .intro {
+            position: relative;
+            padding: 30px;
+            background: url('https://img.goodfon.ru/original/1920x1080/e/36/cherep-krasnyi-krasnoe-red-blood-blood-blood-and-fire-krov-p.jpg') center/cover no-repeat;
+            height: 250px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            border-bottom: 3px solid #ff0000;
+            animation: bloodDrip 5s infinite;
+        }
+        .intro p {
+            font-size: 22px;
+            color: #fff;
+            text-shadow: 0 0 10px #000;
+            background: rgba(0, 0, 0, 0.8);
+            padding: 15px;
+            border-radius: 5px;
+            max-width: 600px;
+        }
+        /* Анимация капель крови */
+        .blood-drop {
+            position: absolute;
+            width: 10px;
+            height: 20px;
+            background: #ff0000;
+            border-radius: 50% 50% 0 0;
+            opacity: 0.8;
+            animation: drip 4s infinite;
+        }
+        .drop1 { left: 10%; animation-delay: 0s; }
+        .drop2 { left: 30%; animation-delay: 1s; }
+        .drop3 { left: 50%; animation-delay: 2s; }
+        .drop4 { left: 70%; animation-delay: 3s; }
+        .drop5 { left: 90%; animation-delay: 1.5s; }
+        @keyframes drip {
+            0% { top: -20px; opacity: 0.8; }
+            50% { opacity: 1; }
+            100% { top: 100vh; opacity: 0; }
+        }
+        @keyframes flicker {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+        @keyframes bloodDrip {
+            0% { border-bottom-color: #ff0000; }
+            50% { border-bottom-color: #800000; }
+            100% { border-bottom-color: #ff0000; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Капли крови -->
+    <div class="blood-drop drop1"></div>
+    <div class="blood-drop drop2"></div>
+    <div class="blood-drop drop3"></div>
+    <div class="blood-drop drop4"></div>
+    <div class="blood-drop drop5"></div>
+
+    <div class="intro">
+        <p>⚠️ Осторожно: Этот сайт — врата в мир жестокости и мрака. Только для тех, кто не боится заглянуть в бездну.</p>
+    </div>
+    <div class="container">
+        <h1>🔪 Gore & Cristle 🔪</h1>
+        <div class="section">
+            <p>Добро пожаловать в обитель ужаса и расчленёнки. Здесь ты найдёшь то, что скрыто от глаз обычных смертных:<br>
+            🔥 Реальные истории, от которых кровь стынет в жилах.<br>
+            📷 Артефакты и изображения, пропитанные тьмой.<br>
+            💬 Закрытые обсуждения для тех, кто разделяет наш вкус к запретному.</p>
+            <p>Вступай в наш Telegram-канал и стань частью кошмара: <a href="https://t.me/GoreAndCristle" target="_blank">t.me/GoreAndCristle</a></p>
+        </div>
+
+        <div class="section">
+            <h2>🔒 Приватный доступ</h2>
+            <p>Для самых отчаянных мы открываем двери в секретные архивы:<br>
+            - <b>War</b>: Кадры прямиком из горячих точек.<br>
+            - <b>Детское Питание</b>: То, о чём не говорят вслух.<br>
+            - <b>MixTape</b>: Сборники, собранные в глубинах даркнета.<br>
+            - <b>SelfHarm</b>: Боль, запечатлённая на плёнке.<br>
+            - <b>Recipe</b>: Туториалы по взлому и крафт, рецепты всяких интересных веществ.<br>
+            И это лишь часть. Тысячи часов видео, сотни уникальных файлов — всё, что ты не найдёшь в открытом доступе.</p>
+            <p class="price">Цена входа: 200₽ или 100 звёзд</p>
+            <p>Оплати и получи доступ к бездне:<br>
+            <a href="https://t.me/MOHCTP_MEPTB0" target="_blank">@MOHCTP_MEPTB0</a> | <a href="https://t.me/geroinamnogo" target="_blank">@geroinamnogo</a></p>
+        </div>
+
+        <div class="section">
+            <h2>📥 Предложи свой кошмар</h2>
+            <p>У тебя есть что-то, что достойно нашей коллекции? Кровавые фото, видео или истории, которые заставят нас вздрогнуть? Отправляй через нашего бота!<br>
+            <a href="https://t.me/GoreAndCristleBot" target="_blank">t.me/GoreAndCristleBot</a></p>
+            <p>Лучшие материалы попадут в приватный раздел — стань частью нашего мира!</p>
+        </div>
+    </div>
+</body>
+</html>
