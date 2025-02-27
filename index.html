@@ -7,7 +7,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Creepster&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <style>
         body {
-            background-color: #0d0d0d;
+            background: #0d0d0d url('https://www.transparenttextures.com/patterns/dark-mosaic.png');
+            background-blend-mode: overlay;
             color: #fff;
             font-family: 'Roboto', sans-serif;
             margin: 0;
@@ -16,22 +17,25 @@
             position: relative;
         }
         .navbar {
-            background-color: #000;
-            padding: 10px 20px;
+            background: linear-gradient(to bottom, #330000, #000);
+            padding: 15px 20px;
             display: flex;
             justify-content: center;
             align-items: center;
-            border-bottom: 2px solid #ff1a1a;
+            border-bottom: 5px double #ff1a1a;
             position: fixed;
             top: 0;
             width: 100%;
             z-index: 1000;
+            box-shadow: 0 0 20px rgba(255, 0, 0, 0.8);
         }
         .navbar .logo {
-            color: #9b59b6;
-            font-size: 24px;
+            color: #ff1a1a;
+            font-size: 30px;
             font-family: 'Creepster', cursive;
             margin-right: 20px;
+            text-shadow: 0 0 15px #ff0000, 0 0 25px #ff0000;
+            animation: flicker 1.2s infinite alternate;
         }
         .navbar nav {
             display: flex;
@@ -41,109 +45,162 @@
         .navbar a {
             color: #fff;
             text-decoration: none;
-            font-size: 16px;
-            transition: color 0.3s;
+            font-size: 18px;
+            font-weight: bold;
+            text-shadow: 0 0 5px rgba(255, 0, 0, 0.5);
+            transition: color 0.3s, text-shadow 0.3s;
         }
         .navbar a:hover {
             color: #ff4d4d;
+            text-shadow: 0 0 15px #ff0000;
         }
         .navbar .services-btn {
-            background-color: #fff;
-            color: #000;
-            padding: 8px 16px;
-            border-radius: 5px;
+            background: linear-gradient(to bottom, #ff3333, #cc0000);
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 10px;
             border: none;
             cursor: pointer;
             font-weight: bold;
-            transition: background-color 0.3s;
+            transition: transform 0.2s, box-shadow 0.3s;
             margin-left: 10px;
             text-decoration: none;
             display: inline-block;
+            box-shadow: 0 0 10px rgba(255, 0, 0, 0.6);
         }
         .navbar .services-btn:hover {
-            background-color: #e6e6e6;
+            transform: scale(1.05);
+            box-shadow: 0 0 20px rgba(255, 0, 0, 0.8);
         }
         .container {
             max-width: 1000px;
-            margin: 80px auto 0;
+            margin: 100px auto 0;
             padding: 20px;
         }
         h1 {
             font-family: 'Creepster', cursive;
             color: #ff1a1a;
-            font-size: 50px;
-            text-shadow: 0 0 10px #ff0000, 0 0 20px #ff0000;
-            animation: flicker 1.5s infinite alternate;
+            font-size: 70px;
+            text-shadow: 0 0 20px #ff0000, 0 0 40px #ff0000;
+            animation: flicker 0.8s infinite alternate;
             margin-bottom: 20px;
+            text-align: center;
+            position: relative;
+        }
+        h1::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 50%;
+            height: 5px;
+            background: url('https://abrakadabra.fun/uploads/posts/2022-03/1646941011_1-abrakadabra-fun-p-krasnaya-luna-art-1.jpg') repeat-x;
         }
         h2 {
             font-family: 'Creepster', cursive;
-            color: #cc0000;
-            font-size: 30px;
-            text-shadow: 0 0 5px #ff3333;
+            color: #ff4d4d;
+            font-size: 40px;
+            text-shadow: 0 0 15px #ff1a1a;
+            position: relative;
+        }
+        h2::before {
+            content: '🩸';
+            position: absolute;
+            left: -30px;
+            animation: drip 2s infinite;
         }
         p {
             font-size: 16px;
             line-height: 1.6;
-            color: #d9d9d9;
+            color: #e6e6e6;
+            text-shadow: 0 0 5px rgba(255, 0, 0, 0.4);
         }
         a {
             color: #ff4d4d;
             text-decoration: none;
             font-weight: bold;
-            transition: color 0.3s;
+            transition: color 0.3s, text-shadow 0.3s;
         }
         a:hover {
             color: #ff9999;
+            text-shadow: 0 0 15px #ff3333;
         }
         .section {
             margin: 40px 0;
-            padding: 20px;
-            background: rgba(20, 20, 20, 0.85);
-            border: 1px solid #ff1a1a;
-            border-radius: 5px;
-            box-shadow: 0 0 15px rgba(255, 0, 0, 0.4);
+            padding: 25px;
+            background: rgba(10, 10, 10, 0.95);
+            border: 4px double #ff1a1a;
+            border-radius: 10px;
+            box-shadow: 0 0 25px rgba(255, 0, 0, 0.7), inset 0 0 15px rgba(255, 0, 0, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+        .section::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://kartinki.pics/uploads/posts/2021-07/1626780798_5-kartinkin-com-p-strashnii-krasnii-fon-krasivo-5.jpg') repeat;
+            opacity: 0.1;
+            pointer-events: none;
         }
         .price {
             color: #ff1a1a;
-            font-size: 24px;
+            font-size: 28px;
             font-weight: bold;
+            text-shadow: 0 0 15px #ff0000;
+            animation: flicker 1.5s infinite alternate;
         }
         .intro {
             position: relative;
-            padding: 20px;
+            padding: 40px;
             background: url('https://img.goodfon.ru/original/1920x1080/e/36/cherep-krasnyi-krasnoe-red-blood-blood-blood-and-fire-krov-p.jpg') center/cover no-repeat;
-            min-height: 150px;
+            min-height: 250px;
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
-            border-bottom: 3px solid #ff0000;
-            animation: bloodDrip 5s infinite;
+            border-bottom: 8px solid #ff0000;
+            box-shadow: 0 0 30px #ff0000;
+            animation: bloodPulse 2s infinite;
         }
         .intro p {
-            font-size: 18px;
+            font-size: 22px;
             color: #fff;
-            text-shadow: 0 0 10px #000;
-            background: rgba(0, 0, 0, 0.8);
-            padding: 10px;
-            border-radius: 5px;
+            text-shadow: 0 0 20px #000;
+            background: rgba(0, 0, 0, 0.9);
+            padding: 20px;
+            border: 3px double #ff1a1a;
+            border-radius: 10px;
             max-width: 80%;
+            position: relative;
+        }
+        .intro p::before {
+            content: '💀';
+            position: absolute;
+            top: -20px;
+            left: 10px;
+            font-size: 30px;
+            animation: drip 3s infinite;
         }
         .blood-drop {
             position: absolute;
-            width: 8px;
-            height: 15px;
+            width: 12px;
+            height: 25px;
             background: #ff0000;
             border-radius: 50% 50% 0 0;
-            opacity: 0.8;
-            animation: drip 4s infinite;
+            opacity: 0.95;
+            animation: drip 2.5s infinite;
+            box-shadow: 0 0 10px #ff0000;
         }
         .drop1 { left: 10%; animation-delay: 0s; }
-        .drop2 { left: 30%; animation-delay: 1s; }
-        .drop3 { left: 50%; animation-delay: 2s; }
-        .drop4 { left: 70%; animation-delay: 3s; }
-        .drop5 { left: 90%; animation-delay: 1.5s; }
+        .drop2 { left: 30%; animation-delay: 0.7s; }
+        .drop3 { left: 50%; animation-delay: 1.2s; }
+        .drop4 { left: 70%; animation-delay: 1.8s; }
+        .drop5 { left: 90%; animation-delay: 0.3s; }
         .modal {
             display: none;
             position: fixed;
@@ -151,119 +208,136 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.8);
+            background: rgba(0, 0, 0, 0.95);
             z-index: 1001;
             justify-content: center;
             align-items: center;
         }
         .modal-content {
-            background: #1a1a1a;
-            padding: 20px;
-            border: 2px solid #ff1a1a;
-            border-radius: 5px;
-            box-shadow: 0 0 20px rgba(255, 0, 0, 0.5);
+            background: rgba(10, 10, 10, 0.95);
+            padding: 30px;
+            border: 4px double #ff1a1a;
+            border-radius: 10px;
+            box-shadow: 0 0 30px rgba(255, 0, 0, 0.8);
             text-align: center;
             max-width: 400px;
             width: 90%;
+            position: relative;
+        }
+        .modal-content::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://stihi.ru/pics/2013/09/12/7438.jpg') repeat;
+            opacity: 0.1;
+            pointer-events: none;
         }
         .modal-content h3 {
             font-family: 'Creepster', cursive;
             color: #ff1a1a;
-            font-size: 24px;
+            font-size: 30px;
+            text-shadow: 0 0 15px #ff0000;
             margin-bottom: 20px;
         }
         .modal-content a {
-            background-color: #ff4d4d;
+            background: linear-gradient(to bottom, #ff3333, #cc0000);
             color: #fff;
-            padding: 10px 20px;
+            padding: 12px 25px;
             border: none;
-            border-radius: 5px;
+            border-radius: 10px;
             cursor: pointer;
             margin: 10px;
             font-size: 16px;
             text-decoration: none;
             display: inline-block;
-            transition: background-color 0.3s;
+            transition: transform 0.2s, box-shadow 0.3s;
+            box-shadow: 0 0 10px rgba(255, 0, 0, 0.6);
         }
         .modal-content a:hover {
-            background-color: #ff3333;
+            transform: scale(1.05);
+            box-shadow: 0 0 20px rgba(255, 0, 0, 0.8);
         }
         .close-modal {
             position: absolute;
             top: 10px;
             right: 10px;
-            font-size: 20px;
-            color: #fff;
+            font-size: 28px;
+            color: #ff1a1a;
             cursor: pointer;
             background: none;
             border: none;
+            text-shadow: 0 0 10px #ff0000;
         }
         .contact-btn {
             position: fixed;
             bottom: 20px;
             right: 20px;
-            background-color: #ff4d4d;
+            background: linear-gradient(to bottom, #ff3333, #cc0000);
             color: #fff;
-            padding: 10px 20px;
-            border-radius: 50px;
-            font-size: 16px;
+            padding: 12px 25px;
+            border-radius: 10px;
+            font-size: 18px;
             font-weight: bold;
             text-decoration: none;
             cursor: pointer;
-            box-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
-            transition: background-color 0.3s;
+            box-shadow: 0 0 15px rgba(255, 0, 0, 0.7);
+            transition: transform 0.2s, box-shadow 0.3s;
             z-index: 1000;
         }
         .contact-btn:hover {
-            background-color: #ff3333;
+            transform: scale(1.05);
+            box-shadow: 0 0 25px rgba(255, 0, 0, 0.9);
         }
         @keyframes drip {
-            0% { top: -20px; opacity: 0.8; }
+            0% { top: -40px; opacity: 0.95; }
             50% { opacity: 1; }
             100% { top: 100vh; opacity: 0; }
         }
         @keyframes flicker {
             0%, 100% { opacity: 1; }
-            50% { opacity: 0.7; }
+            50% { opacity: 0.5; }
         }
-        @keyframes bloodDrip {
-            0% { border-bottom-color: #ff0000; }
-            50% { border-bottom-color: #800000; }
-            100% { border-bottom-color: #ff0000; }
+        @keyframes bloodPulse {
+            0% { border-bottom-color: #ff0000; box-shadow: 0 0 30px #ff0000; }
+            50% { border-bottom-color: #800000; box-shadow: 0 0 40px #800000; }
+            100% { border-bottom-color: #ff0000; box-shadow: 0 0 30px #ff0000; }
         }
         @media (max-width: 768px) {
             .container { padding: 10px; }
-            h1 { font-size: 36px; }
-            h2 { font-size: 24px; }
+            h1 { font-size: 50px; }
+            h2 { font-size: 32px; }
             p { font-size: 14px; }
-            .intro { min-height: 120px; }
-            .intro p { font-size: 16px; max-width: 90%; }
+            .intro { min-height: 200px; }
+            .intro p { font-size: 18px; max-width: 90%; }
             .section { margin: 20px 0; padding: 15px; }
-            .price { font-size: 20px; }
-            .blood-drop { width: 6px; height: 12px; }
-            .navbar { padding: 5px 10px; }
-            .navbar nav { gap: 10px; }
-            .navbar a { font-size: 14px; }
-            .navbar .services-btn { padding: 6px 12px; font-size: 14px; margin-left: 5px; }
-            .modal-content { padding: 15px; }
-            .modal-content h3 { font-size: 20px; }
-            .modal-content a { padding: 8px 16px; font-size: 14px; margin: 5px; }
-            .contact-btn { padding: 8px 16px; font-size: 14px; }
+            .price { font-size: 24px; }
+            .blood-drop { width: 10px; height: 20px; }
+            .navbar { padding: 10px; }
+            .navbar nav { gap: 15px; }
+            .navbar a { font-size: 16px; }
+            .navbar .services-btn { padding: 8px 16px; font-size: 14px; }
+            .modal-content { padding: 20px; }
+            .modal-content h3 { font-size: 26px; }
+            .modal-content a { padding: 10px 20px; font-size: 14px; }
+            .contact-btn { padding: 10px 20px; font-size: 16px; }
         }
         @media (max-width: 480px) {
-            h1 { font-size: 28px; }
-            h2 { font-size: 20px; }
+            h1 { font-size: 40px; }
+            h2 { font-size: 26px; }
             p { font-size: 12px; }
-            .intro p { font-size: 14px; }
+            .intro p { font-size: 16px; }
             .section { padding: 10px; }
-            .navbar { padding: 5px 5px; }
-            .navbar nav { gap: 5px; }
-            .navbar a { font-size: 12px; }
-            .navbar .services-btn { padding: 4px 8px; font-size: 12px; margin-left: 3px; }
-            .modal-content { padding: 10px; }
-            .modal-content h3 { font-size: 18px; }
-            .modal-content a { padding: 6px 12px; font-size: 12px; margin: 3px; }
-            .contact-btn { padding: 6px 12px; font-size: 12px; }
+            .navbar { padding: 5px; }
+            .navbar nav { gap: 10px; }
+            .navbar a { font-size: 14px; }
+            .navbar .services-btn { padding: 6px 12px; font-size: 12px; }
+            .modal-content { padding: 15px; }
+            .modal-content h3 { font-size: 22px; }
+            .modal-content a { padding: 8px 16px; font-size: 12px; }
+            .contact-btn { padding: 8px 16px; font-size: 14px; }
         }
     </style>
 </head>
