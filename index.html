@@ -20,7 +20,7 @@
             background-color: #000;
             padding: 10px 20px;
             display: flex;
-            justify-content: center; /* Центрирование всех элементов */
+            justify-content: center;
             align-items: center;
             border-bottom: 2px solid #ff1a1a;
             position: fixed;
@@ -29,10 +29,10 @@
             z-index: 1000;
         }
         .navbar .logo {
-            color: #9b59b6; /* Фиолетовый цвет логотипа */
+            color: #9b59b6;
             font-size: 24px;
             font-family: 'Creepster', cursive;
-            margin-right: 20px; /* Отступ справа от логотипа */
+            margin-right: 20px;
         }
         .navbar nav {
             display: flex;
@@ -57,16 +57,16 @@
             cursor: pointer;
             font-weight: bold;
             transition: background-color 0.3s;
-            margin-left: 10px; /* Лёгкий отступ для интеграции в меню */
-            text-decoration: none; /* Убираем подчёркивание у ссылки */
-            display: inline-block; /* Для стилизации как кнопки */
+            margin-left: 10px;
+            text-decoration: none;
+            display: inline-block;
         }
         .navbar .services-btn:hover {
             background-color: #e6e6e6;
         }
         .container {
             max-width: 1000px;
-            margin: 80px auto 0; /* Отступ сверху для навигации */
+            margin: 80px auto 0;
             padding: 20px;
         }
         h1 {
@@ -131,7 +131,6 @@
             border-radius: 5px;
             max-width: 80%;
         }
-        /* Капли крови */
         .blood-drop {
             position: absolute;
             width: 8px;
@@ -146,7 +145,6 @@
         .drop3 { left: 50%; animation-delay: 2s; }
         .drop4 { left: 70%; animation-delay: 3s; }
         .drop5 { left: 90%; animation-delay: 1.5s; }
-        /* Модальное окно */
         .modal {
             display: none;
             position: fixed;
@@ -201,6 +199,26 @@
             background: none;
             border: none;
         }
+        /* Стили для кнопки связи в углу */
+        .contact-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #ff4d4d;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 50px;
+            font-size: 16px;
+            font-weight: bold;
+            text-decoration: none;
+            cursor: pointer;
+            box-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
+            transition: background-color 0.3s;
+            z-index: 1000;
+        }
+        .contact-btn:hover {
+            background-color: #ff3333;
+        }
         /* Анимации */
         @keyframes drip {
             0% { top: -20px; opacity: 0.8; }
@@ -218,103 +236,38 @@
         }
         /* Адаптивность */
         @media (max-width: 768px) {
-            .container {
-                padding: 10px;
-            }
-            h1 {
-                font-size: 36px;
-            }
-            h2 {
-                font-size: 24px;
-            }
-            p {
-                font-size: 14px;
-            }
-            .intro {
-                min-height: 120px;
-            }
-            .intro p {
-                font-size: 16px;
-                max-width: 90%;
-            }
-            .section {
-                margin: 20px 0;
-                padding: 15px;
-            }
-            .price {
-                font-size: 20px;
-            }
-            .blood-drop {
-                width: 6px;
-                height: 12px;
-            }
-            .navbar {
-                padding: 5px 10px;
-            }
-            .navbar nav {
-                gap: 10px;
-            }
-            .navbar a {
-                font-size: 14px;
-            }
-            .navbar .services-btn {
-                padding: 6px 12px;
-                font-size: 14px;
-                margin-left: 5px;
-            }
-            .modal-content {
-                padding: 15px;
-            }
-            .modal-content h3 {
-                font-size: 20px;
-            }
-            .modal-content a {
-                padding: 8px 16px;
-                font-size: 14px;
-                margin: 5px;
-            }
+            .container { padding: 10px; }
+            h1 { font-size: 36px; }
+            h2 { font-size: 24px; }
+            p { font-size: 14px; }
+            .intro { min-height: 120px; }
+            .intro p { font-size: 16px; max-width: 90%; }
+            .section { margin: 20px 0; padding: 15px; }
+            .price { font-size: 20px; }
+            .blood-drop { width: 6px; height: 12px; }
+            .navbar { padding: 5px 10px; }
+            .navbar nav { gap: 10px; }
+            .navbar a { font-size: 14px; }
+            .navbar .services-btn { padding: 6px 12px; font-size: 14px; margin-left: 5px; }
+            .modal-content { padding: 15px; }
+            .modal-content h3 { font-size: 20px; }
+            .modal-content a { padding: 8px 16px; font-size: 14px; margin: 5px; }
+            .contact-btn { padding: 8px 16px; font-size: 14px; }
         }
         @media (max-width: 480px) {
-            h1 {
-                font-size: 28px;
-            }
-            h2 {
-                font-size: 20px;
-            }
-            p {
-                font-size: 12px;
-            }
-            .intro p {
-                font-size: 14px;
-            }
-            .section {
-                padding: 10px;
-            }
-            .navbar {
-                padding: 5px 5px;
-            }
-            .navbar nav {
-                gap: 5px;
-            }
-            .navbar a {
-                font-size: 12px;
-            }
-            .navbar .services-btn {
-                padding: 4px 8px;
-                font-size: 12px;
-                margin-left: 3px;
-            }
-            .modal-content {
-                padding: 10px;
-            }
-            .modal-content h3 {
-                font-size: 18px;
-            }
-            .modal-content a {
-                padding: 6px 12px;
-                font-size: 12px;
-                margin: 3px;
-            }
+            h1 { font-size: 28px; }
+            h2 { font-size: 20px; }
+            p { font-size: 12px; }
+            .intro p { font-size: 14px; }
+            .section { padding: 10px; }
+            .navbar { padding: 5px 5px; }
+            .navbar nav { gap: 5px; }
+            .navbar a { font-size: 12px; }
+            .navbar .services-btn { padding: 4px 8px; font-size: 12px; margin-left: 3px; }
+            .modal-content { padding: 10px; }
+            .modal-content h3 { font-size: 18px; }
+            .modal-content a { padding: 6px 12px; font-size: 12px; margin: 3px; }
+            .contact-btn { padding: 6px 12px; font-size: 12px; }
         }
     </style>
 </head>
@@ -330,7 +283,7 @@
         <div class="logo">🔪</div>
         <nav>
             <a href="#main">Главная</a>
-            <a href="https://t.me/GoreAndCristle" target="_blank">Telegram-канал</a>
+            <a href="https://t.me/+fCOmekzzBOAwNjBh" target="_blank">Telegram-канал</a>
             <a href="#articles">Статьи</a>
             <a href="javascript:void(0)" class="services-btn" onclick="openModal()">Услуги</a>
         </nav>
@@ -346,7 +299,7 @@
             🔥 Реальные истории, от которых кровь стынет в жилах.<br>
             📷 Артефакты и изображения, пропитанные тьмой.<br>
             💬 Закрытые обсуждения для тех, кто разделяет наш вкус к запретному.</p>
-            <p>Вступай в наш Telegram-канал и стань частью кошмара: <a href="https://t.me/GoreAndCristle" target="_blank">t.me/GoreAndCristle</a></p>
+            <p>Вступай в наш Telegram-канал и стань частью кошмара: <a href="https://t.me/+fCOmekzzBOAwNjBh" target="_blank">t.me/GoreAndCristle</a></p>
         </div>
 
         <div class="section" id="private">
@@ -366,15 +319,27 @@
             <p>Здесь собраны мрачные размышления о мире gore. Представьте заброшенный особняк, где стены пропитаны кровью, или тайные эксперименты, оставляющие за собой лишь эхо криков. Эти тексты погружают в глубины ужаса, раскрывая тайны, которые лучше бы остались похороненными. Изучай архив и делись своими находками в нашем сообществе!</p>
         </div>
 
-    <!-- Модальное окно -->
-    <div id="servicesModal" class="modal">
-        <div class="modal-content">
-            <button class="close-modal" onclick="closeModal()">×</button>
-            <h3>Выберите специалиста</h3>
-            <a href="https://t.me/MOHCTP_MEPTB0" target="_blank">Связаться с @MOHCTP_MEPTB0</a>
-            <a href="https://t.me/geroinamnogo" target="_blank">Связаться с @geroinamnogo</a>
+        <!-- Модальное окно для услуг -->
+        <div id="servicesModal" class="modal">
+            <div class="modal-content">
+                <button class="close-modal" onclick="closeModal()">×</button>
+                <h3>Выберите специалиста</h3>
+                <a href="https://t.me/MOHCTP_MEPTB0" target="_blank">Связаться с @MOHCTP_MEPTB0</a>
+                <a href="https://t.me/geroinamnogo" target="_blank">Связаться с @geroinamnogo</a>
+            </div>
         </div>
-    </div>
+
+        <!-- Кнопка связи в углу -->
+        <div class="contact-btn" onclick="openContactModal()">Связаться с нами</div>
+
+        <!-- Модальное окно для контактов -->
+        <div id="contactModal" class="modal">
+            <div class="modal-content">
+                <button class="close-modal" onclick="closeContactModal()">×</button>
+                <h3>Контакты</h3>
+                <p>По всем вопросам пишите на почту <a href="mailto:GoreAndCristle@gmail.com">GoreAndCristle@gmail.com</a></p>
+            </div>
+        </div>
     </div>
 
     <script>
@@ -386,11 +351,22 @@
             document.getElementById('servicesModal').style.display = 'none';
         }
 
-        // Закрытие модального окна при клике вне его
+        function openContactModal() {
+            document.getElementById('contactModal').style.display = 'flex';
+        }
+
+        function closeContactModal() {
+            document.getElementById('contactModal').style.display = 'none';
+        }
+
         window.onclick = function(event) {
-            const modal = document.getElementById('servicesModal');
-            if (event.target === modal) {
-                modal.style.display = 'none';
+            const servicesModal = document.getElementById('servicesModal');
+            const contactModal = document.getElementById('contactModal');
+            if (event.target === servicesModal) {
+                servicesModal.style.display = 'none';
+            }
+            if (event.target === contactModal) {
+                contactModal.style.display = 'none';
             }
         }
     </script>
